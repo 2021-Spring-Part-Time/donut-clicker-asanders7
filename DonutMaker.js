@@ -1,19 +1,33 @@
 class DonutMaker {
-    constructor(donutCount, autoClickerCount, autoClickerCost) {
+    constructor(donutCount, autoClickerCount, autoClickerCost, donutMultiplierCount, donutMultiplierCost) {
         this.donutCount = donutCount;
         this.autoClickerCount = autoClickerCount;
         this.autoClickerCost = autoClickerCost;
+        this.donutMultiplierCount = donutMultiplierCount;
+        this.donutMultiplierCost = donutMultiplierCost;
     }
 
     makeDonut() {
-        donutCount += 1;
+        if (donutMultiplierCount === 0) {
+            donutCount += 1;
+        }
+        else {
+            donutCount += Math.pow(1.2, donutMultiplierCount);
+        }
     }
 
     purchaseAutoClicker() {
         if (donutCount >= autoClickerCost) {
-            autoClickerCount += 1;
-            donutCount -= autoClickerCost;
-            autoClickerCost += (autoClickerCost * .1);
+            if (donutMultiplierCount === 0) {
+                autoClickerCount += 1;
+                donutCount -= autoClickerCost;
+                autoClickerCost += (autoClickerCost * .1);
+            }
+            else {
+                autoClickerCount += donutMultiplierCount;
+                donutCount -= this.autoClickerCost;
+                autoClickerCost += (autoClickerCost * .1);
+            }
         }
         else {
             //not enough donuts to purchase auto clicker
@@ -22,16 +36,40 @@ class DonutMaker {
             autoClickerCost = autoClickerCost;
         }
     }
+
+    purchaseDonutMultiplier() {
+        if (donutCount >= donutMultiplierCost) {
+            donutMultiplierCount += 1;
+            donutCount -= donutMultiplierCost;
+            donutMultiplierCost += (donutMultiplierCost * .1);
+        }
+        else {
+            //not enough donuts to purchase donut multiplier
+            autoClickerCount = autoClickerCount;
+            donutCount = donutCount;
+            autoClickerCost = autoClickerCost;
+            donutMultiplierCount = donutMultiplierCount;
+            donutMultiplierCost = donutMultiplierCost;
+        }
+    }
 }
 
 export default DonutMaker;
 
 export const getDonutCount = (DonutMaker) => {
-    return ( 'Donut Count: ' + DonutMaker.donutCount);
+    return ( 'Donut Count: ' + donutCount);
 };
 
 export const getAutoClickerCount = (DonutMaker) => {
-    return ( 'Auto Clicker Count: ' + DonutMaker.autoClickerCount);
+    return ( 'Auto Clicker Count: ' + autoClickerCount);
+};
+
+export const getAutoClickerCount = (DonutMaker) => {
+    return ( 'Donut Multiplier Count: ' + donutMultiplierCount);
+};
+
+export const getAutoClickerCost = (DonutMaker) => {
+    return ( 'Donut Multiplier Cost: ' + donutMultiplierCost);
 };
 
 export const createActionButton = (parentElem, childElem, childText) => {
@@ -46,6 +84,9 @@ export const donutMakingEvent = (buttonVar, DonutMaker) => {
         }
         if(buttonVar.innerText === 'Buy Auto Clicker') {
             DonutMaker.purchaseAutoClicker();
+        }
+        if(buttonVar.innerText === 'Buy Donut Multiplier') {
+            DonutMaker.purchaseDonutMultiplier();
         }
     });
 };
