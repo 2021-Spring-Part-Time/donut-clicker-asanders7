@@ -1,0 +1,189 @@
+.donut-page {
+    background-image: url("images/donuts.jpg");
+    background-position: left top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    border-radius: 8px;
+    margin: auto;
+    padding: 25px;
+    width: 80%;
+}
+
+.header {
+    background-color: rgb(241, 241, 178);
+    border-radius: 8px;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+.header a {
+    color: rgb(221, 50, 150);
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 28px;
+    text-align: center;
+}
+
+.company-info-dropdown-menu {
+    float: left;
+    overflow: hidden;
+}
+
+.company-info-dropdown-menu .company-info-button {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 14px 28px;
+}
+
+.header a:hover, .company-info-dropdown-menu:hover .company-info-button, .developer-dropdown-menu:hover .developer-info-button {
+    background-color: turquoise;
+}
+
+.bakerInfoContent {
+    background-color: rgb(224, 215, 224);
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    z-index: 1;
+}
+
+.bakerInfoContent a {
+    color: rgb(221, 50, 150);
+    display: block;
+    float: none;
+    padding: 14px 28px;
+    text-align: left;
+}
+
+.bakerInfoContent a:hover {
+    background-color: turquoise;
+    color: white;
+}
+
+.company-info-dropdown-menu:hover .bakerInfoContent {
+    color: white;
+    display: block;
+}
+
+.developer-dropdown-menu {
+    float: left;
+    overflow: hidden;
+}
+
+.developer-dropdown-menu .developer-info-button {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 14px 28px;
+}
+
+.developer-info {
+    background-color: rgb(224, 215, 224);
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    z-index: 1;
+}
+
+.developer-info a {
+    color: rgb(221, 50, 150);
+    display: block;
+    float: none;
+    padding: 14px 28px;
+    text-align: left;
+}
+
+.developer-info a:hover {
+    background-color: turquoise;
+    color: white;
+}
+
+.developer-dropdown-menu:hover .developer-info {
+    color: white;
+    display: block;
+}
+
+.grid-container {
+    background-color: rgb(240, 235, 228);
+    border-radius: 8px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 15px;
+    padding-top: 0px;
+    width: 20%;
+}
+
+.modal {
+    display: none;
+    height: 100%;
+    left: 50%;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1;
+}
+
+.modal-developer-info {
+    height: 100%;
+    left: 0;
+    margin: 15% auto;
+    max-width: 100%;
+    overflow: auto;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    width: 600px;
+}
+
+.developer-photo {
+    border-radius: 8px;
+    box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    padding-top: 10px;
+    width: 20%;
+    -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+}
+
+.github-icon {
+    width: 25%;
+}
+
+.close {
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    cursor: pointer;
+}
+
+.title {
+    padding-top: 8px;
+}
+
+.game-section{
+    background-color: rgb(240, 235, 228);
+    border-radius: 8px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-top: 0px;
+    width: 40%;
+}

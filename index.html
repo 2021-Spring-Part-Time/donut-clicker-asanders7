@@ -4,10 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Donut Clicker</title>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="donut-page">
+      <div class ="header">
+        <a href="#home">Home</a>
+        <div class="company-info-dropdown-menu">
+          <button class="company-info-button">Fred the Baker Baking Company
+          </button>
+          <div class="bakerInfoContent">
+            <a href="#">Company Info</a>
+          </div>
+        </div>
+        <div class="developer-dropdown-menu">
+          <button class="developer-info-button">Meet the Developer
+          </button>
+          <div class="developer-info">
+            <a href="#">Developer Info</a>
+          </div>
+        </div>
+        <div class="cookie-clicker-link"><a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">Play Cookie Clicker (the game inspo!)</a></div>
+      </div>
+      <section class="game-section">
+        <h1 class="title">Donut Clicker</h1>
+        <button class="donutMakingButton">Click here to make donuts!</button>
+        <div id="donutCountElem">
+          <h2>Donut Count: </h2>
+        </div>
+        <div id="autoClickerInfo">
+          <section>
+            <h2>Auto Clicker Count:</h2>
+            <button class="purchaseAutoClickerButton">Purchase an Auto Clicker</button>
+          </section>
+        </div>
+        <div id="donutMultiplierInfo">
+          <section>
+            <h2>Donut Multiplier Count: </h2>
+            <button class="purchaseDonutMultiplierButton">Purchase a Donut Multiplier</button>
+          </section>
+        </div>
+      </section>
+      <button id="modalBtn"></button>
+      <div id="modal">
+        <div class="non-scrolling-info">
+          <h2>About the Developer</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="scrollable-info">
+          <div class="photo">
+            <img
+              class="developer-photo"
+              src="images/alicia-photo.jpg"
+              alt="alicia">
+          </div>
+          <div class="about-the-developer">
+            Welcome to my Donut Clicker application! My name is Alicia Sanders and I am a current student at WCCI, a Software Development
+            bootcamp. I enjoy writing code and creating fun games and applications. For more information about me, check out my Portfolio
+            page linked below. To see other applications I have created, visit my GitHub page (also linked below.) I hope you have a great
+            time playing Donut Clicker and good luck making lots of donuts! :)
+          </div>
+          <div class="grid-container">
+            <div class="social-media-block">
+              <h3 class="social-media-header"></h4>
+              <div><img class="github-icon" src="images/github-icon.png" alt="github"><a href="https://github.com/asanders7">GitHub</a></div>
+              <p></p>
+              <div><a href="https://asanders7.github.io/">My Portfolio</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
