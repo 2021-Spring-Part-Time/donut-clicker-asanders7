@@ -4,6 +4,7 @@
     background-repeat: repeat;
     background-attachment: fixed;
     border-radius: 8px;
+    height: 100%;
     margin: auto;
     padding: 25px;
     width: 80%;
@@ -115,6 +116,18 @@
     display: block;
 }
 
+.modalBtn {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 10px 20px;
+}
+
 .grid-container {
     background-color: rgb(240, 235, 228);
     border-radius: 8px;
@@ -126,17 +139,25 @@
     width: 20%;
 }
 
-.modal {
+.modalClass {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 8px;
     display: none;
-    height: 100%;
+    height: 65%;
     left: 50%;
     max-height: 100%;
     overflow: auto;
     position: fixed;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 40%;
     z-index: 1;
+}
+
+.modal-content {
+    background-color:rgb(221, 50, 150);
+    border: 10px;
+    text-align: center;
 }
 
 .modal-developer-info {
@@ -151,39 +172,100 @@
     width: 600px;
 }
 
+.developer-para {
+    text-align: left;
+}
+
 .developer-photo {
     border-radius: 8px;
     box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
     padding: 10px;
     padding-top: 10px;
-    width: 20%;
-    -webkit-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+    width: 15%;
+}
+
+.about-the-developer {
+    background-color: rgb(240, 235, 228);
+    border-radius: 8px;
+    box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+    margin-left: 25%;
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
 }
 
 .github-icon {
-    width: 25%;
+    width: 5%;
 }
 
 .close {
     float: right;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: bold;
 }
 
 .close:hover, .close:focus {
+    color: palevioletred;
     cursor: pointer;
 }
 
 .title {
+    color:rgb(221, 50, 150);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
     padding-top: 8px;
+    text-align: center;
 }
 
-.game-section{
+.myDonuts {
     background-color: rgb(240, 235, 228);
     border-radius: 8px;
+    margin-top: 20px;
     padding-bottom: 15px;
     padding-left: 20px;
     padding-top: 0px;
     width: 40%;
+}
+
+.donut-information {
+    background-color: purple;
+    border-radius: 8px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.donut-photo {
+    border-radius: 8px;
+    display: block;
+    height: 400px;
+    max-height: 100%;
+    max-width: 100%;
+    width: 400px;
+}
+
+.centered-text {
+    background-color: black;
+    border-radius: 8px;
+    left: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.donut-count {
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style:oblique;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.donut-button {
+    margin: 0;
+    padding: 0;
 }

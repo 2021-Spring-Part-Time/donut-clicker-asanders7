@@ -8,93 +8,54 @@ class DonutMaker {
     }
 
     makeDonut() {
-        if (donutMultiplierCount === 0) {
-            donutCount += 1;
+        if (this.donutMultiplierCount === 0) {
+            this.donutCount += 1;
         }
         else {
-            donutCount += Math.pow(1.2, donutMultiplierCount);
+            this.donutCount += Math.pow(1.2, this.donutMultiplierCount);
         }
     }
 
     purchaseAutoClicker() {
-        if (donutCount >= autoClickerCost) {
-            if (donutMultiplierCount === 0) {
-                autoClickerCount += 1;
-                donutCount -= autoClickerCost;
-                autoClickerCost += (autoClickerCost * .1);
+        if (this.donutCount >= this.autoClickerCost) {
+            if (this.donutMultiplierCount === 0) {
+                this.autoClickerCount += 1;
+                this.donutCount -= this.autoClickerCost;
+                this.autoClickerCost += (this.autoClickerCost * .1);
             }
             else {
-                autoClickerCount += donutMultiplierCount;
-                donutCount -= this.autoClickerCost;
-                autoClickerCost += (autoClickerCost * .1);
+                this.autoClickerCount += this.donutMultiplierCount;
+                this.donutCount -= this.autoClickerCost;
+                this.autoClickerCost += (this.autoClickerCost * .1);
             }
         }
         else {
             //not enough donuts to purchase auto clicker
-            autoClickerCount = autoClickerCount;
-            donutCount = donutCount;
-            autoClickerCost = autoClickerCost;
+            this.autoClickerCount = this.autoClickerCount;
+            this.donutCount = this.donutCount;
+            this.autoClickerCost = this.autoClickerCost;
         }
     }
 
     purchaseDonutMultiplier() {
-        if (donutCount >= donutMultiplierCost) {
-            donutMultiplierCount += 1;
-            donutCount -= donutMultiplierCost;
-            donutMultiplierCost += (donutMultiplierCost * .1);
+        if (this.donutCount >= this.donutMultiplierCost) {
+            this.donutMultiplierCount += 1;
+            this.donutCount -= this.donutMultiplierCost;
+            this.donutMultiplierCost += (this.donutMultiplierCost * .1);
         }
         else {
             //not enough donuts to purchase donut multiplier
-            autoClickerCount = autoClickerCount;
-            donutCount = donutCount;
-            autoClickerCost = autoClickerCost;
-            donutMultiplierCount = donutMultiplierCount;
-            donutMultiplierCost = donutMultiplierCost;
+            this.autoClickerCount = this.autoClickerCount;
+            this.donutCount = this.donutCount;
+            this.autoClickerCost = this.autoClickerCost;
+            this.donutMultiplierCount = this.donutMultiplierCount;
+            this.donutMultiplierCost = this.donutMultiplierCost;
         }
     }
+
+    activateAutoClickers() {
+        donutInfo.donutCount += donutInfo.autoClickerCount;
+    };
 }
 
 export default DonutMaker;
-
-export const getDonutCount = (DonutMaker) => {
-    return ( 'Donut Count: ' + donutCount);
-};
-
-export const getAutoClickerCount = (DonutMaker) => {
-    return ( 'Auto Clicker Count: ' + autoClickerCount);
-};
-
-export const getAutoClickerCount = (DonutMaker) => {
-    return ( 'Donut Multiplier Count: ' + donutMultiplierCount);
-};
-
-export const getAutoClickerCost = (DonutMaker) => {
-    return ( 'Donut Multiplier Cost: ' + donutMultiplierCost);
-};
-
-export const createActionButton = (parentElem, childElem, childText) => {
-    childElem.innerText = childText;
-    parentElem.appendChild(childElem);
-};
-
-export const donutMakingEvent = (buttonVar, DonutMaker) => {
-    buttonVar.addEventListener('click', ()=> {
-        if(buttonVar.innerText === 'Make a Donut') {
-            DonutMaker.makeDonut();
-        }
-        if(buttonVar.innerText === 'Buy Auto Clicker') {
-            DonutMaker.purchaseAutoClicker();
-        }
-        if(buttonVar.innerText === 'Buy Donut Multiplier') {
-            DonutMaker.purchaseDonutMultiplier();
-        }
-    });
-};
-
-export const activateAutoClickersEvent = (buttonVar, DonutMaker) => {
-    buttonVar.addEventListener('click', ()=> {
-        if(buttonVar.innerText === 'Activate Auto Clickers') ()=> {
-            donutCount += autoClickerCount;
-        }
-    });
-};
