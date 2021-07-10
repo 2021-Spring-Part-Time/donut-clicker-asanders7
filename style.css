@@ -1,0 +1,378 @@
+.donut-page {
+    background-image: url("images/donuts.jpg");
+    background-position: left top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    border-radius: 8px;
+    height: 100%;
+    margin: auto;
+    padding: 25px;
+    width: 80%;
+}
+
+.header {
+    background-color: rgb(241, 241, 178);
+    border-radius: 8px;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+.header a {
+    color: rgb(221, 50, 150);
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 28px;
+    text-align: center;
+}
+
+.company-info-dropdown-menu {
+    float: left;
+    overflow: hidden;
+}
+
+.company-info-dropdown-menu .company-info-button {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 14px 28px;
+}
+
+.header a:hover, .company-info-dropdown-menu:hover .company-info-button, .developer-dropdown-menu:hover .developer-info-button {
+    background-color: turquoise;
+}
+
+.bakerInfoContent {
+    background-color: rgb(224, 215, 224);
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    z-index: 1;
+}
+
+.bakerInfoContent a {
+    color: rgb(221, 50, 150);
+    display: block;
+    float: none;
+    padding: 14px 28px;
+    text-align: left;
+}
+
+.bakerInfoContent a:hover {
+    background-color: turquoise;
+    color: white;
+}
+
+.company-info-dropdown-menu:hover .bakerInfoContent {
+    color: white;
+    display: block;
+}
+
+.developer-dropdown-menu {
+    float: left;
+    overflow: hidden;
+}
+
+.developer-dropdown-menu .developer-info-button {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 14px 28px;
+}
+
+.developer-info {
+    background-color: rgb(224, 215, 224);
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    z-index: 1;
+}
+
+.developer-info a {
+    color: rgb(221, 50, 150);
+    display: block;
+    float: none;
+    padding: 14px 28px;
+    text-align: left;
+}
+
+.developer-info a:hover {
+    background-color: turquoise;
+    color: white;
+}
+
+.developer-dropdown-menu:hover .developer-info {
+    color: white;
+    display: block;
+}
+
+.modalBtn {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 10px 20px;
+}
+
+/* .grid-container {
+    background-color: rgb(240, 235, 228);
+    border-radius: 8px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 15px;
+    padding-top: 0px;
+    width: 20%;
+} */
+
+.baker-popup-class {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    display: none;
+    height: 65%;
+    left: 50%;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    z-index: 1;
+}
+
+.popup-info {
+    background:rgb(204, 148, 197);
+}
+
+.modalClass {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    display: none;
+    height: 65%;
+    left: 50%;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    z-index: 1;
+}
+
+.modal-content {
+    background-color:rgb(221, 50, 150);
+    border: 10px;
+    text-align: center;
+}
+
+.modal-developer-info {
+    height: 100%;
+    left: 0;
+    margin: 15% auto;
+    max-width: 100%;
+    overflow: auto;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    width: 600px;
+}
+
+.developer-para {
+    text-align: left;
+}
+
+.developer-photo {
+    border-radius: 8px;
+    box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    padding-top: 10px;
+    width: 15%;
+}
+
+.about-the-developer {
+    background-color: rgb(240, 235, 228);
+    border-radius: 8px;
+    box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.75);
+    margin-left: 25%;
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
+}
+
+.github-icon {
+    width: 5%;
+}
+
+.close {
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: palevioletred;
+    cursor: pointer;
+}
+
+.title {
+    color:rgb(221, 50, 150);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    padding-top: 8px;
+    text-align: center;
+}
+
+/* .myDonuts {
+    background-color: rgb(240, 235, 228);
+    border-radius: 8px;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-top: 0px;
+    width: 40%;
+} */
+
+/* .donut-information {
+    background-color: purple;
+    border-radius: 8px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+} */
+
+.donut-photo {
+    border-radius: 8px;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: 400px;
+}
+
+/* .centered-text {
+    background-color: white;
+    border-radius: 8px;
+    left: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.donut-count {
+    color: rgb(84, 47, 151);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style:oblique;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/* .donut-count {
+    background-color: purple;
+    border-radius: 8px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+} */
+
+.donut-button {
+    margin: 0;
+    padding: 0;
+}
+
+.donut-button:hover {
+    opacity: 0.7;
+}
+
+.autoClickerInfoClass {
+    background-color: rgb(230, 46, 205);
+    border-radius: 8px;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 40%;
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
+}
+
+.donutMultiplierInfoClass {
+    background-color: rgb(84, 47, 151);
+    border-radius: 8px;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
+}
+
+.autoClickerBtn {
+    background-color: rgb(241, 241, 178);
+    border-radius: 8px;
+    color:rgb(84, 47, 151);
+    font-size: x-large;
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+.autoClickerBtn:hover {
+    background-color: rgb(238, 157, 211);
+    color: white;
+}
+
+.donutMultiplierBtn {
+    background-color: rgb(241, 241, 178);
+    border-radius: 8px;
+    color:rgb(230, 46, 205);
+    font-size: x-large;
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+.donutMultiplierBtn:hover {
+    background-color: rgb(238, 157, 211);
+    color: white;
+}
+
+.activateAutoClickersBtn {
+    background-color: rgb(241, 241, 178);
+    border-radius: 8px;
+    color:rgb(84, 47, 151);
+    font-size: x-large;
+    margin-left: 30%;
+    margin-top: 10px;
+    padding: 10px;
+    width: 40%;
+}
+
+.activateAutoClickersBtn:hover {
+    background-color: rgb(238, 157, 211);
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
