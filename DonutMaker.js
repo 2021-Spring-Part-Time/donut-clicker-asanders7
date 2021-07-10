@@ -20,16 +20,9 @@ class DonutMaker {
 
     purchaseAutoClicker() {
         if (this.donutCount >= this.autoClickerCost) {
-            if (this.donutMultiplierCount === 0) {
-                this.autoClickerCount += 1;
-                this.donutCount -= this.autoClickerCost;
-                this.autoClickerCost += (this.autoClickerCost * .1);
-            }
-            else {
-                this.autoClickerCount += this.donutMultiplierCount;
-                this.donutCount -= this.autoClickerCost;
-                this.autoClickerCost += (this.autoClickerCost * .1);
-            }
+            this.autoClickerCount += 1;
+            this.donutCount -= this.autoClickerCost;
+            this.autoClickerCost += (this.autoClickerCost * .1);
         }
         else {
             //not enough donuts to purchase auto clicker
@@ -57,7 +50,7 @@ class DonutMaker {
     }
 
     activateAutoClickers() {
-        this.donutCount += this.autoClickerCount;
+        this.donutCount += (this.autoClickerCount * this.donutAmtPerClick);
     };
 }
 
