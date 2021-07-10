@@ -1,5 +1,5 @@
 import DonutMaker from './DonutMaker.js';
-import { donutCount, autoClickerCount, autoClickerCost, donutMultiplierCount, donutMultiplierCost } from './utils.js';
+import { donutCount, autoClickerCount, autoClickerCost, donutMultiplierCount, donutMultiplierCost, donutAmtPerClick } from './utils.js';
 
 const modal = document.getElementById("modal");
 const modalButton = document.getElementById("modalBtn");
@@ -19,9 +19,11 @@ function renderPage() {
 };
 
 function donutPageSetup() {
-  const donutInfo = new DonutMaker(0, 0, 100, 0, 10);
+  const donutInfo = new DonutMaker(0, 0, 100, 0, 10, 1);
   const donutCountPara = document.getElementById('donutCountPara');
   donutCountPara.innerText = donutCount(donutInfo);
+  const donutAmtPerClickPara = document.getElementById('donut-click-amt');
+  donutAmtPerClickPara.innerText = donutAmtPerClick(donutInfo);
   // myDonutsDiv.appendChild(donutCountPara);
 
   const autoClickerCountPara = document.getElementById('autoClickerCount');
@@ -49,16 +51,17 @@ function donutPageSetup() {
     autoClickerCostPara.innerText = autoClickerCost(donutInfo);
     donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
     donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
+    donutAmtPerClickPara.innerText= donutAmtPerClick(donutInfo);
   });
 
   checkButtonAvailability();
 
   function checkButtonAvailability() {
     if (donutCount(donutInfo) < 10) {
-      document.getElementById("buyAutoClickerButton").disabled = true;
+      document.getElementById("buyDonutMultiplierButton").disabled = true;
     }
     else if (donutCount(donutInfo) >= 10) {
-      document.getElementById("buyAutoClickerButton").disabled = false;
+      document.getElementById("buyDonutMultiplierButton").disabled = false;
     }
   }
 
@@ -70,6 +73,7 @@ function donutPageSetup() {
     autoClickerCostPara.innerText = autoClickerCost(donutInfo);
     donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
     donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
+    donutAmtPerClickPara.innerText = donutAmtPerClick(donutInfo);
   });
 
   buyDonutMultiplierButton.addEventListener('click', () => {
@@ -80,15 +84,24 @@ function donutPageSetup() {
     autoClickerCostPara.innerText = autoClickerCost(donutInfo);
     donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
     donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
+    donutAmtPerClickPara.innerText = donutAmtPerClick(donutInfo);
   });
 
   activateAutoClickersButton.addEventListener('click', () => {
-    donutInfo.activateAutoClickers();
+    runAutoClickers();
+    // donutInfo.activateAutoClickers();
     console.log('activated auto clickers');
     donutCountPara.innerText = donutCount(donutInfo);
     autoClickerCountPara.innerText = autoClickerCount(donutInfo);
     autoClickerCostPara.innerText = autoClickerCost(donutInfo);
     donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
     donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
+    donutAmtPerClickPara.innerText = donutAmtPerClick(donutInfo);
   });
+
+  function runAutoClickers() {
+    setInterval(function(){
+      donutInfo.activateAutoClickers();
+  }, 1000);
+  }
 };

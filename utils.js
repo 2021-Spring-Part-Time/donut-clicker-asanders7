@@ -37,3 +37,8 @@ export const donutMultiplierCost = (donutInfo) => {
     return ( ' Donut Multiplier Cost: ' +
     donutInfo.donutMultiplierCost);
 };
+
+export const donutAmtPerClick = (donutInfo) => {
+    return ( ' Donut Amount Per Click: ' +
+    donutInfo.donutAmtPerClick);
+};

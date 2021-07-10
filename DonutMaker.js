@@ -1,10 +1,11 @@
 class DonutMaker {
-    constructor(donutCount, autoClickerCount, autoClickerCost, donutMultiplierCount, donutMultiplierCost) {
+    constructor(donutCount, autoClickerCount, autoClickerCost, donutMultiplierCount, donutMultiplierCost, donutAmtPerClick) {
         this.donutCount = donutCount;
         this.autoClickerCount = autoClickerCount;
         this.autoClickerCost = autoClickerCost;
         this.donutMultiplierCount = donutMultiplierCount;
         this.donutMultiplierCost = donutMultiplierCost;
+        this.donutAmtPerClick = donutAmtPerClick;
     }
 
     makeDonut() {
@@ -12,7 +13,8 @@ class DonutMaker {
             this.donutCount += 1;
         }
         else {
-            this.donutCount += Math.pow(1.2, this.donutMultiplierCount);
+            // this.donutAmtPerClick = Math.pow(1.2, this.donutMultiplierCount);
+            this.donutCount += this.donutAmtPerClick;
         }
     }
 
@@ -40,6 +42,7 @@ class DonutMaker {
     purchaseDonutMultiplier() {
         if (this.donutCount >= this.donutMultiplierCost) {
             this.donutMultiplierCount += 1;
+            this.donutAmtPerClick = Math.pow(1.2, this.donutMultiplierCount);
             this.donutCount -= this.donutMultiplierCost;
             this.donutMultiplierCost += (this.donutMultiplierCost * .1);
         }
