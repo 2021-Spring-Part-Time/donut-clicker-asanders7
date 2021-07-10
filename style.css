@@ -128,16 +128,17 @@
     padding: 10px 20px;
 }
 
-/* .grid-container {
-    background-color: rgb(240, 235, 228);
-    border-radius: 8px;
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 15px;
-    padding-top: 0px;
-    width: 20%;
-} */
+.bakerInfoBtn {
+    background-color: inherit;
+    border: none;
+    color: rgb(221, 50, 150);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 10px 20px;
+}
 
 .baker-popup-class {
     background-color: rgba(0,0,0,0.4);
@@ -155,7 +156,9 @@
 }
 
 .popup-info {
-    background:rgb(204, 148, 197);
+    background-color:rgb(221, 50, 150);
+    border: 10px;
+    text-align: center;
 }
 
 .modalClass {
@@ -177,6 +180,22 @@
     background-color:rgb(221, 50, 150);
     border: 10px;
     text-align: center;
+}
+
+.baker-data {
+    color: white;
+    font-size: x-large;
+}
+
+.close-baker {
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.close-baker:hover, .close:focus {
+    color: palevioletred;
+    cursor: pointer;
 }
 
 .modal-developer-info {
@@ -236,26 +255,6 @@
     text-align: center;
 }
 
-/* .myDonuts {
-    background-color: rgb(240, 235, 228);
-    border-radius: 8px;
-    margin-top: 20px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-top: 0px;
-    width: 40%;
-} */
-
-/* .donut-information {
-    background-color: purple;
-    border-radius: 8px;
-    color: white;
-    font-size: larger;
-    font-weight: bold;
-    margin-top: 10px;
-    padding: 10px;
-} */
-
 .donut-photo {
     border-radius: 8px;
     display: block;
@@ -263,16 +262,6 @@
     max-width: 100%;
     width: 400px;
 }
-
-/* .centered-text {
-    background-color: white;
-    border-radius: 8px;
-    left: 50%;
-    padding: 5px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 .donut-count {
     color: rgb(84, 47, 151);
@@ -282,16 +271,6 @@
     font-weight: bolder;
     text-align: center;
 }
-
-/* .donut-count {
-    background-color: purple;
-    border-radius: 8px;
-    color: white;
-    font-size: larger;
-    font-weight: bold;
-    margin-top: 10px;
-    padding: 10px;
-} */
 
 .donut-button {
     margin: 0;

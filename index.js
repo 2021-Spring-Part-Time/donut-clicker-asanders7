@@ -7,6 +7,7 @@ const closeButton = document.getElementsByClassName("close")[0];
 
 const bakerPopup = document.getElementById("baker-popup");
 const bakerButton = document.getElementById("bakerBtn");
+const closeBakerButton = document.getElementsByClassName("close-baker")[0];
 
 const donutButton = document.getElementById('donutButton');
 const buyAutoClickerButton = document.getElementById('buyAutoClickerButton');
@@ -50,9 +51,9 @@ function donutPageSetup() {
     bakerPopup.style.display = "block";
   });
 
-  closeButton.addEventListener('click', () => {
+  closeBakerButton.addEventListener('click', () => {
     bakerPopup.style.display = "none";
-  })
+  });
 
   donutButton.addEventListener('click', () => {
     donutInfo.makeDonut();
