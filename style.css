@@ -139,6 +139,25 @@
     width: 20%;
 } */
 
+.baker-popup-class {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    display: none;
+    height: 65%;
+    left: 50%;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    z-index: 1;
+}
+
+.popup-info {
+    background:rgb(204, 148, 197);
+}
+
 .modalClass {
     background-color: rgba(0,0,0,0.4);
     border-radius: 8px;
@@ -245,7 +264,7 @@
     width: 400px;
 }
 
-.centered-text {
+/* .centered-text {
     background-color: white;
     border-radius: 8px;
     left: 50%;
@@ -253,7 +272,7 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .donut-count {
     color: rgb(84, 47, 151);
@@ -277,6 +296,10 @@
 .donut-button {
     margin: 0;
     padding: 0;
+}
+
+.donut-button:hover {
+    opacity: 0.7;
 }
 
 .autoClickerInfoClass {

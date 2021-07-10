@@ -10,12 +10,11 @@
   <body>
     <div class="donut-page">
       <div class ="header">
-        <a href="#home">Home</a>
         <div class="company-info-dropdown-menu">
           <button class="company-info-button">Fred the Baker Baking Company
           </button>
           <div class="bakerInfoContent">
-            <a href="#">Company Info</a>
+            <a href="#baker-popup"><button id="bakerBtn" class="bakerInfoBtn">Company Info</button></a>
           </div>
         </div>
         <div class="developer-dropdown-menu">
@@ -56,7 +55,20 @@
           <button id="activateAutoClickersButton" class="activateAutoClickersBtn">Activate Auto Clickers</button>
         </section>
       </div>
-
+      <div id="baker-popup" class="baker-popup-class">
+        <div class="popup-info">
+          <span class="close">&times;</span>
+          <img
+            class="fred"
+            src="images/fred-the-baker.jpg"
+            alt="fred"/>
+          <p>Fred the Baker Baking Company is famous for producing a constant stream of delicious donuts to
+            satisfy the public. Fred the Baker has decided to retire after an exhausting career in the food
+            industry and wanted this game to be created so he can continue creating donuts.
+            Donut Maker Clicker has now come from the drawing board to the browser. Help keep Fred's love of
+            donuts alive and see how many donuts you can create!</p>
+        </div>
+    </div>
       <div id="modal" class="modalClass">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -68,7 +80,7 @@
               <img
                 class="developer-photo"
                 src="images/alicia-photo.jpg"
-                alt="alicia">
+                alt="alicia"/>
             </div>
             <div class="about-the-developer">
               <p class="developer-para">Welcome to my Donut Clicker application! My name is Alicia Sanders and I am a current student at WCCI, a Software Development
