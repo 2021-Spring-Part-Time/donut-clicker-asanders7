@@ -54,7 +54,7 @@ class DonutMaker {
     }
 
     activateAutoClickers() {
-        donutInfo.donutCount += donutInfo.autoClickerCount;
+        this.donutCount += this.autoClickerCount;
     };
 }
 

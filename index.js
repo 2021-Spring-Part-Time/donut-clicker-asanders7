@@ -1,5 +1,5 @@
 import DonutMaker from './DonutMaker.js';
-import { donutStats } from './utils.js';
+import { donutCount, autoClickerCount, autoClickerCost, donutMultiplierCount, donutMultiplierCost } from './utils.js';
 
 const modal = document.getElementById("modal");
 const modalButton = document.getElementById("modalBtn");
@@ -20,10 +20,19 @@ function renderPage() {
 
 function donutPageSetup() {
   const donutInfo = new DonutMaker(0, 0, 100, 0, 10);
-  const donutPara = document.getElementById('donutInfo');
-  donutPara.innerText = donutStats(donutInfo);
+  const donutCountPara = document.getElementById('donutCountPara');
+  donutCountPara.innerText = donutCount(donutInfo);
+  // myDonutsDiv.appendChild(donutCountPara);
 
-  myDonutsDiv.appendChild(donutPara);
+  const autoClickerCountPara = document.getElementById('autoClickerCount');
+  autoClickerCountPara.innerText = autoClickerCount(donutInfo);
+  const autoClickerCostPara = document.getElementById('autoClickerCost');
+  autoClickerCostPara.innerText = autoClickerCost(donutInfo);
+
+  const donutMultiplierCountPara = document.getElementById('donutMultiplierCount');
+  donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
+  const donutMultiplierCostPara = document.getElementById('donutMultiplierCost');
+  donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
 
   modalButton.addEventListener('click', () => {
     modal.style.display = "block";
@@ -35,27 +44,51 @@ function donutPageSetup() {
   donutButton.addEventListener('click', () => {
     donutInfo.makeDonut();
     console.log('making donuts!');
-    donutPara.innerText = donutStats(donutInfo);
+    donutCountPara.innerText = donutCount(donutInfo);
+    autoClickerCountPara.innerText = autoClickerCount(donutInfo);
+    autoClickerCostPara.innerText = autoClickerCost(donutInfo);
+    donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
+    donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
   });
+
+  checkButtonAvailability();
+
+  function checkButtonAvailability() {
+    if (donutCount(donutInfo) < 10) {
+      document.getElementById("buyAutoClickerButton").disabled = true;
+    }
+    else if (donutCount(donutInfo) >= 10) {
+      document.getElementById("buyAutoClickerButton").disabled = false;
+    }
+  }
 
   buyAutoClickerButton.addEventListener('click', () => {
     donutInfo.purchaseAutoClicker();
     console.log('purchased auto clicker');
-    donutPara.innerText = donutStats(donutInfo);
+    donutCountPara.innerText = donutCount(donutInfo);
+    autoClickerCountPara.innerText = autoClickerCount(donutInfo);
+    autoClickerCostPara.innerText = autoClickerCost(donutInfo);
+    donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
+    donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
   });
 
   buyDonutMultiplierButton.addEventListener('click', () => {
     donutInfo.purchaseDonutMultiplier();
     console.log('purchased donut maker');
-    donutPara.innerText = donutStats(donutInfo);
+    donutCountPara.innerText = donutCount(donutInfo);
+    autoClickerCountPara.innerText = autoClickerCount(donutInfo);
+    autoClickerCostPara.innerText = autoClickerCost(donutInfo);
+    donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
+    donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
   });
 
   activateAutoClickersButton.addEventListener('click', () => {
     donutInfo.activateAutoClickers();
     console.log('activated auto clickers');
-      donutPara.innerText = donutStats(donutInfo);
+    donutCountPara.innerText = donutCount(donutInfo);
+    autoClickerCountPara.innerText = autoClickerCount(donutInfo);
+    autoClickerCostPara.innerText = autoClickerCost(donutInfo);
+    donutMultiplierCountPara.innerText = donutMultiplierCount(donutInfo);
+    donutMultiplierCostPara.innerText = donutMultiplierCost(donutInfo);
   });
 };
-
-// donutMakingEvent(donutButton, buyAutoClickerButton, buyDonutMultiplierButton, activateAutoClickersButton);
-// activateAutoClickersEvent(activateAutoClickersButton);
